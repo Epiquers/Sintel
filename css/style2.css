@@ -1,0 +1,184 @@
+/* Importo fuentes Cinzel y Roboto de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;  /* Fuente para todo el body */
+    font-size: 18px;                    /* Tamaño general de la fuente */
+    line-height: 1.8;                   /* Altura entre líneas */
+    color: #e0e0e0;                   /* Color del texto para todo el body */
+    background-color: #000;           /* Aunque no se ve, por si acaso tarda en cargar el background principal */
+    background-image: radial-gradient(circle at center, #2e2e2e 0%, #000000 85%);   /* Fondo de la página difuminado */
+}
+
+/* Estilo de los títulos */
+.titulo, .card-title, .overlay h5, .card-horizontal h3 {
+    font-family: 'Cinzel', serif;       /* Fuente de los titulos */
+    font-weight: bold;                  /* Negrita */
+    color: #ff5e57;                   /* Color de los títulos */
+}
+
+.titulo {
+    letter-spacing: 3px;                                 /* Espacio entre las letras */
+    text-shadow: 0 0 15px rgba(255, 94, 87, 0.6);      /* Sombreado texto */
+    margin-bottom: 40px;                                 /* Margen abajo */
+    border-bottom: 1px solid rgba(255, 94, 87, 0.3);   /* Línea debajo del título */
+    padding-bottom: 10px;                                /* Espacio abajo */
+}
+
+/* Estilo elementos  */
+
+.navbar {
+    background: rgba(0, 0, 0, 0.8) !important;             /* Color fondo del navbar */
+    backdrop-filter: blur(10px);                             /* Filtro de desenfoque */  
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);     /* Línea debajo del navbar */
+}
+
+.nav-link {
+    letter-spacing: 1px;      /* Espacio entre las letras */
+    font-size: 14px;          /* Tamaño de la fuente del nav */
+    transition: color 0.3s;   /* Suaviza el cambio de color */
+    margin-left: 5px;         /* Margen entre los links de nav */
+}
+
+
+.nav-link:hover { 
+    color: #ff5e57;         /* Color al pasar el ratón por los links del nav */
+}
+
+.caja {
+    background-color: rgba(255, 255, 255, 0.05);     /* Color de fondo de las cajas */
+    border: 1px solid rgba(255, 255, 255, 0.1);      /* Color del borde */
+    border-radius: 15px;                               /* Bordes redondeados */
+    padding: 40px;                                     /* Espacio entre el borde y el texto */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);      /* Sombra alrededor de la caja */
+}
+
+video {
+    border-radius: 10px;                               /* Bordes dedondeados */
+    box-shadow: 0 0 20px rgba(255, 94, 87, 0.3);     /* Sombra del contenedor del video */
+}
+
+.banner { 
+    border-bottom: 4px solid #ff5e57;   /* Línea abajo del banner */
+
+}
+
+#bannerSimple { 
+    aspect-ratio: 23 / 9;   /* Formato del banner panorámico */
+}
+
+/* Botón Circular */
+.btn-circle {
+    width: 40px; height: 40px;      /* Altura y ancho del botón de la música */        
+    border-radius: 50%;             /* Borde redondeado */
+    border: 2px solid #000;       /* Borde negro del botón */
+    font-size: 22px;                /* Tamaño del play */
+    padding: 0;                     /* Quitamos el espacio interior */
+    display: flex;                  /* Convertimos a flex para centrar interior */
+    justify-content: center;        /* Centramos horizontalmente */
+    align-items: center;            /* Centramos verticalmente */
+    cursor: pointer;                /* Cursor al pasar por encima */
+}
+.btn-circle:hover { background-color: rgba(255, 255, 255, 0.1); color: #ff5e57; }
+
+/* Estilos generales de las cards */
+
+.card-galeria, .card-personaje, .card-horizontal {
+    position: relative;             /* Posición relativa para poder luego ubicar los elementos de dentro */
+    background-color: #1a1a1a;    /* Color de fondo oscuro para las tarjetas */
+    border: 1px solid #333;       /* Borde un poco mas claro que el fondo */
+    border-radius: 12px;            /* Borde redondeado */
+    overflow: hidden;               /* Oculta el contenido que sobresale del contenedor */
+    cursor: pointer;                /* Cursor al pasar por encima */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;  /* Transición mas suave del desplazamiento, la sombra y el color del borde */
+}
+
+/* Hover común */
+.card-galeria:hover, .card-personaje:hover, .card-horizontal:hover {
+    border-color: #ff5e57;                              /* Color del borde de las cards */
+    box-shadow: 0 10px 25px rgba(255, 94, 87, 0.2);     /* Sombra de las cards */
+}
+
+/* Imágenes común */
+.card-galeria img, .card-personaje img, .card-horizontal img {
+    width: 100%;            /* Para que ocupe todo el ancho del contenedor */
+    height: 100%;           /* Para que ocupe todo el alto del contenedor */
+    object-fit: cover;      /* Hace zoom a la imagen hasta rellenar los huecos */
+}
+
+/* Estilos específicos de las cards */
+
+/* Galería */
+.card-galeria { 
+    aspect-ratio: 16 / 9;       /* Formato panorámico de las cards de la galería */
+}
+
+.card-galeria img { 
+    transition: transform 0.5s ease;    /* Suaviza la transición de la imagen */
+}
+
+/* Hover cards galería*/
+.card-galeria:hover img { 
+    transform: scale(1.1);              /* Aumenta ligeramente la imagen */
+}
+
+.card-galeria:hover .overlay { 
+    transform: translateY(0);           /* Al pasar por encima vuelve a su posición original */
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;                 /* Posición absoluta para poder ubicarlo donde quedamos con botton y left en este caso */
+    bottom: 0;                          /* Pega el overlay abajo */
+    left: 0;                            /* Pega el overlay a la izquierda */
+    width: 100%;                        /* Hace que ocupe todo el ancho de la card */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);   /* Crea una sombra suave para que el texto se pueda leer independientemente del fondo */
+    padding: 20px;                      /* Espacio dentro del overlay */
+    transform: translateY(100%);        /* Desplaza hacia abajo en este caso una distancia igual a su altura */
+    transition: transform 0.3s ease;    /* Suaviza la transición del texto suviendo */
+}
+.overlay h5 { 
+    margin-bottom: 2px;                 /* Margen abajo del h5 */
+}
+
+
+/* Estilos personajes */
+.card-personaje:hover { 
+    transform: translateY(-5px);        /* Mueve ligeramente la targeta hacia arriba */
+} 
+
+.card-personaje img { 
+    border-bottom: 1px solid #333;    /* Línea debajo de la imagen del personaje */
+    height: auto;                       /* Altura auto para que se ajuste automáticamente */
+}
+.card-body { 
+    padding: 25px;                      /* Espacio dentro del body de la tarjeta */
+    text-align: center;                 /* Texto centrado */
+}
+
+.card-text { 
+    color: #e0e0e0;                   /* Color del texto */
+    font-size: 16px;                    /* Tamaño del texto de las cards */
+    line-height: 1.6;                   /* Reduzco el espacio entre lineas */ 
+}
+.card-title { 
+    margin-bottom: 15px;                /* Margen inferior de las cards */
+}
+
+
+/* Estilos recomendados */
+.card-horizontal:hover { 
+    transform: translateY(-5px);        /* Levanta la tarjeta */
+} 
+
+.card-horizontal h3 { 
+    margin-bottom: 25px;                /* Margen inferior del h3 de las cards */
+}
+
+.card-horizontal p { 
+    color: #ddd;                      /* Color texto del párrafo de las cards */
+}
+
+.card-horizontal img { 
+    border-right: 1px solid #333;    /* Línea a la derecha de la imagen */
+}      
