@@ -67,6 +67,11 @@ video {
     aspect-ratio: 23 / 9;   /* Formato del banner panorámico */
 }
 
+.btn-outline-danger {
+  color: #ff5e57;
+  border-color: #ff5e57;
+}
+
 /* Botón Circular del audio del banner */
 .btn-circle {
     width: 40px; height: 40px;      /* Altura y ancho del botón de la música */        
