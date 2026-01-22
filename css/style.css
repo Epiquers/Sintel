@@ -100,7 +100,7 @@ video {
 }
 
 /* Hover común */
-.card-galeria:hover, .card-personaje:hover, .card-horizontal:hover {
+.card-galeria:hover, .card-personaje:hover, .card-horizontal:hover, .card-galeria:focus {
     border-color: #ff5e57;                              /* Color del borde de las cards */
     box-shadow: 0 10px 25px rgba(255, 94, 87, 0.2);     /* Sombra de las cards */
 }
@@ -124,11 +124,11 @@ video {
 }
 
 /* Hover cards galería*/
-.card-galeria:hover img { 
+.card-galeria:hover img, .card-galeria:focus img { 
     transform: scale(1.1);              /* Aumenta ligeramente la imagen */
 }
 
-.card-galeria:hover .overlay { 
+.card-galeria:hover .overlay, .card-galeria:focus .overlay{ 
     transform: translateY(0);           /* Al pasar por encima vuelve a su posición original */
 }
 
